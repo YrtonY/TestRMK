@@ -1,17 +1,15 @@
-# Documentation: https://rmk.rs/docs/configuration.html
 [keyboard]
-name = "RMK Keyboard"
-product_name = "RMK Keyboard"
+name = "{{ project_name }}"
+product_name = "{{ project_name }}"
 vendor_id = 0x4c4b
 product_id = 0x4643
 manufacturer = "RMK"
-chip = "rp2040"
+chip = "{{ chip_name }}"
 
 [matrix]
 # Row and col pins are mandatory
-row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-col_pins = ["PIN_19", "PIN_20", "PIN_21"]
-
+row_pins = ["PA9", "PA8", "PA7", "PA6"]
+col_pins = ["PA10", "PA14", "PA15"]
 # RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
 # row2col = true
 
@@ -33,3 +31,6 @@ keymap = [
         ["_", "_", "_"]
     ],
 ]
+
+[dependency]
+defmt_log = false
